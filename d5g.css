@@ -16,7 +16,7 @@ body{
 
 .container{
     padding: 50px;
-    width: 1440px;
+    max-width: 1440px;
     margin: auto;
 }
 header{
@@ -28,6 +28,7 @@ header{
     display: grid;
 }
 nav{
+    color: black;
     height: 50px;
     background-color:burlywood;
     align-items: center;
@@ -90,52 +91,60 @@ footer{
     color: #000022;
 }
 
-@media (max-width: 1024px){
-    .container{   
-      width: 1024px;  
+/* Para pantallas de hasta 1024px de ancho */
+  @media (max-width: 1024px) {
+    .container {
+      max-width: 100%;
     }
-    #info{
-        grid-template-columns: auto auto;
+  
+    #info {
+      grid-template-columns: auto auto;
     }
-
-    #valores{
-        grid-column: 1 /span 2;
+  
+    #valores {
+      grid-column: 1 / span 2;
     }
-
-
-    #imagen{
-        grid-template-columns: 1fr 1fr 1fr ;
+  
+    main {
+      height: 800px; 
     }
+    #imagen {
+      height: auto; /* Cambiado a auto para que la altura sea dinámica */
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
     
-}
-@media (max-width: 768px){
-    .container{
-        width: 768px;
-       
+  }
+  
+  /* Para pantallas de hasta 768px de ancho */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 100%; /* Cambiado a max-width para que sea responsive */
     }
-    #info{
-        height: 550px;
-        display: flex;
-        flex-direction: column;
+  
+    #info {
+      height: auto; 
+      display: flex;
+      flex-direction: column;
     }
-    main{
-        height: ;
+  
+    main {
+      height: 800px; 
     }
-
-    #imagen{
-        height: 240px;
-        grid-template-columns: 1fr 1fr ;
-       
+  
+    #imagen {
+      height: auto; /* Cambiado a auto para que la altura sea dinámica */
+      grid-template-columns: 1fr 1fr;
     }
-    .img6{
-        order: 1;
+  
+    .img6 {
+      order: 1;
     }
-    .img3{
-        order: 1;
+  
+    .img3 {
+      order: 1;
     }
-    footer{
-        height: 300px;
-       
-    }
+  
     
-}
+  }
+  
